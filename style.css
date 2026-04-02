@@ -1,0 +1,166 @@
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    padding: 20px;
+
+    /* Centrar todo vertical y horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Para que el contenido pueda centrarse verticalmente */
+    min-height: 100vh;
+
+    /* Evita que el contenido quede pegado a los bordes en pantallas pequeñas */
+    box-sizing: border-box;
+}
+
+/* Caja principal donde está todo el contenido */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    /* Antes era fijo, ahora es flexible */
+    width: 420px;
+    max-width: 95%; /* Para pantallas pequeñas */
+
+    margin: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    animation: slide-up 0.6s ease-out;
+
+    /* Centrado del texto dentro del contenedor */
+    text-align: center;
+}
+
+/* Estilo del título */
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+    animation: fade-in 1s ease-out;
+}
+
+/* ------------------------------ */
+/*  NUEVO: CONTENEDOR DE MATRIZ   */
+/* ------------------------------ */
+/*
+   Este contenedor permite que matrices grandes (6x6, 10x10)
+   no rompan el diseño. Si la tabla es muy ancha, aparece un
+   scroll horizontal elegante SOLO para la tabla.
+*/
+#matriz {
+    overflow-x: auto;      /* Scroll horizontal si es necesario */
+    margin-top: 15px;
+    padding-bottom: 10px;
+
+    /* Para que el scroll no se vea feo */
+    scrollbar-width: thin;
+}
+
+/* Estilo de la tabla para que no se pegue a los bordes */
+#matriz table {
+    margin: auto;
+}
+
+/* Estilo de los inputs de texto */
+input[type=text] {
+    width: 60px;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    transition: 0.3s;
+
+    /* Para que no se desborden en pantallas pequeñas */
+    max-width: 22vw;
+}
+
+/* Efecto cuando el usuario hace clic en un input */
+input[type=text]:focus {
+    border-color: #0078ff;
+    box-shadow: 0 0 5px #0078ff;
+}
+
+/* Estilo para inputs inválidos (celdas en rojo) */
+input.invalid {
+    border-color: red !important;
+    background: #ffd6d6;
+}
+
+/* Estilo de los botones */
+button {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    background: #0078ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Efecto hover del botón */
+button:hover {
+    background: #005fcc;
+    transform: scale(1.03);
+}
+
+/* Estilo de los resultados */
+.resultado {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in 0.8s forwards;
+}
+
+/* Animación de aparición */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animación de deslizamiento hacia arriba */
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------------------ */
+/*   SECCIÓN RESPONSIVA REAL      */
+/* ------------------------------ */
+/*
+   Esta sección adapta la interfaz a pantallas pequeñas
+   como teléfonos y tablets.
+*/
+@media (max-width: 600px) {
+
+    /* Reducir tamaño del contenedor */
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Inputs más grandes y cómodos en móvil */
+    input[type=text] {
+        width: 50px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    /* Botones más grandes */
+    button {
+        padding: 14px;
+        font-size: 18px;
+    }
+
+    /* Texto más grande para resultados */
+    .resultado {
+        font-size: 22px;
+    }
+}
+

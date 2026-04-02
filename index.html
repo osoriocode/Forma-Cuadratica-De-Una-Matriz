@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Forma Cuadrática</title>
+
+    <!-- Archivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- math.js: librería matemática para calcular determinantes -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11/lib/browser/math.js"></script>
+</head>
+<body>
+
+<!-- Contenedor principal con animación -->
+<div class="container fade-in">
+
+    <!-- Título de la aplicación -->
+    <h2 class="title">Forma Cuadrática</h2>
+
+    <!-- Campo para elegir el tamaño de la matriz -->
+    <label>Tamaño de la matriz:</label>
+    <input type="number" id="n" min="1" max="10" value="3" class="no-arrows">
+
+    <!-- Botón para generar la matriz -->
+    <button onclick="generarMatriz()">Generar matriz</button>
+
+    <!-- Aquí se insertará la tabla de la matriz -->
+    <div id="matriz" class="fade-in"></div>
+
+    <!-- Botón para calcular la forma cuadrática -->
+    <button onclick="calcular()">Calcular forma cuadrática</button>
+
+    <!-- Resultados -->
+    <div id="resultado" class="resultado"></div>
+    <div id="definitud" class="resultado"></div>
+</div>
+
+<!-- Archivo JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
