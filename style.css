@@ -137,12 +137,15 @@ button:hover {
    Esta sección adapta la interfaz a pantallas pequeñas
    como teléfonos y tablets.
 */
+
+
 @media (max-width: 600px) {
 
     /* Reducir tamaño del contenedor */
     .container {
         width: 95%;
         padding: 20px;
+
     }
 
     /* Inputs más grandes y cómodos en móvil */
@@ -163,4 +166,3 @@ button:hover {
         font-size: 22px;
     }
 }
-
